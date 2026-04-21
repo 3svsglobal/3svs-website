@@ -309,6 +309,12 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
   body{padding-bottom:72px}
   .ft{padding:48px 20px 32px}
 }
+
+/* Language toggle */
+.lang-toggle{display:flex;align-items:center;gap:0;margin-left:16px;font-size:13px;font-weight:600;letter-spacing:0.5px}
+.lang-btn{padding:6px 10px;cursor:pointer;color:rgba(255,255,255,0.35);transition:color 0.3s}
+.lang-btn.active{color:#fff}
+.lang-sep{color:rgba(255,255,255,0.15);font-weight:400}
 </style>
 </head>
 <body>
@@ -318,6 +324,7 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
   <div class="n-logo">3SVS <span>Venture Studio</span></div>
   <div class="n-menu"><a href="#s">Services</a><a href="#t">Track Record</a><a href="#n">News</a><a href="#ct">Contact</a></div>
   <a class="n-cta" href="#ct">Get in Touch</a>
+  <div class="lang-toggle"><span class="lang-btn active" data-lang="ko" onclick="switchLang('ko')">KO</span><span class="lang-sep">|</span><span class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</span></div>
 </nav>
 
 <!-- HERO -->
@@ -390,17 +397,17 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
   <div class="svc-list">
     <div class="svc-item reveal">
       <div class="svc-num">01</div>
-      <div class="svc-body"><h3 data-text="svc1_title">글로벌 컨퍼런스 &amp; 행사 운영</h3><p data-text="svc1_desc">글로벌 박람회, 데모데이, 포럼 등 모든 형태의 행사를 기획·운영합니다.</p><div class="svc-tags"><span>박람회</span><span>데모데이</span><span>컨퍼런스</span></div></div>
+      <div class="svc-body"><h3 data-text="svc1_title">글로벌 컨퍼런스 &amp; 행사 운영</h3><p data-text="svc1_desc">글로벌 박람회, 데모데이, 포럼 등 모든 형태의 행사를 기획·운영합니다.</p><div class="svc-tags"><span data-ko="박람회" data-en="Expo">박람회</span><span data-ko="데모데이" data-en="Demo Day">데모데이</span><span data-ko="컨퍼런스" data-en="Conference">컨퍼런스</span></div></div>
       <div class="svc-proof">Qualcomm<br>Plug and Play<br>서울대학교</div>
     </div>
     <div class="svc-item reveal">
       <div class="svc-num">02</div>
-      <div class="svc-body"><h3 data-text="svc2_title">창업지원 &amp; 역량강화 프로그램</h3><p data-text="svc2_desc">BM 고도화, IR 컨설팅, 멘토링을 정부·공공기관과 함께 설계·운영합니다.</p><div class="svc-tags"><span>멘토링</span><span>IR 컨설팅</span><span>BM 설계</span></div></div>
+      <div class="svc-body"><h3 data-text="svc2_title">창업지원 &amp; 역량강화 프로그램</h3><p data-text="svc2_desc">BM 고도화, IR 컨설팅, 멘토링을 정부·공공기관과 함께 설계·운영합니다.</p><div class="svc-tags"><span data-ko="멘토링" data-en="Mentoring">멘토링</span><span data-ko="IR 컨설팅" data-en="IR Consulting">IR 컨설팅</span><span data-ko="BM 설계" data-en="BM Design">BM 설계</span></div></div>
       <div class="svc-proof">KISED<br>KOSA<br>단국대학교</div>
     </div>
     <div class="svc-item reveal">
       <div class="svc-num">03</div>
-      <div class="svc-body"><h3 data-text="svc3_title">해외 시장 진출 실행</h3><p data-text="svc3_desc">미국, 싱가포르, 중동에 투자자·바이어를 직접 연결합니다. Walmart 입점을 실행합니다.</p><div class="svc-tags"><span>Walmart</span><span>동남아 유통</span><span>투자유치</span></div></div>
+      <div class="svc-body"><h3 data-text="svc3_title">해외 시장 진출 실행</h3><p data-text="svc3_desc">미국, 싱가포르, 중동에 투자자·바이어를 직접 연결합니다. Walmart 입점을 실행합니다.</p><div class="svc-tags"><span>Walmart</span><span data-ko="동남아 유통" data-en="SEA Distribution">동남아 유통</span><span data-ko="투자유치" data-en="Investment">투자유치</span></div></div>
       <div class="svc-proof">북미<br>동남아<br>중동</div>
     </div>
   </div>
@@ -414,8 +421,8 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
   <div class="tr-inner">
     <div class="tr-big reveal-left">
       <div class="tr-big-num">10+</div>
-      <div class="tr-big-lbl">수행 사업</div>
-      <div class="tr-big-sub">2024년 설립 이후<br>매년 3배 성장</div>
+      <div class="tr-big-lbl" data-ko="수행 사업" data-en="Projects">수행 사업</div>
+      <div class="tr-big-sub" data-ko="2024년 설립 이후<br>매년 3배 성장" data-en="3x growth every year<br>since founding in 2024">2024년 설립 이후<br>매년 3배 성장</div>
     </div>
     <div class="tl" id="tr-container">
       <div class="tc reveal d1"><div class="yr">2024</div><div class="ti"><strong>퀄컴 QAIPI APAC Demo Day</strong> <span class="tt">Qualcomm</span></div><div class="ti"><strong>스타트업 집중 육성</strong> <span class="tt">JBCCEI</span></div><div class="ti"><strong>IT 수출 상담회</strong> 중동 <span class="tt">KOSA</span></div></div>
@@ -430,13 +437,13 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
 <!-- PROCESS (horizontal scroll) -->
 <section class="sec"><div class="si">
   <div class="lb reveal">/Process</div>
-  <h2 class="st reveal d1">48시간 안에<br>시작됩니다</h2>
+  <h2 class="st reveal d1" data-ko="48시간 안에<br>시작됩니다" data-en="It starts<br>within 48 hours">48시간 안에<br>시작됩니다</h2>
   <div class="proc-wrap">
     <div class="proc-cards">
-      <div class="pc reveal-scale d1"><div class="sn">01</div><h4>기획</h4><p>목표 수립, 기업 모집 설계, 프로그램 구조 기획</p><div class="pc-note">→ 48시간 내 제안</div></div>
-      <div class="pc reveal-scale d2"><div class="sn">02</div><h4>운영</h4><p>컨퍼런스·프로그램 실행, 멘토링, 네트워킹</p><div class="pc-note">→ 전담 PM 배정</div></div>
-      <div class="pc reveal-scale d3"><div class="sn">03</div><h4>연결</h4><p>바이어·파트너 매칭, IR 기회 제공</p><div class="pc-note">→ 글로벌 네트워크</div></div>
-      <div class="pc reveal-scale d4"><div class="sn">04</div><h4>실행</h4><p>해외 진출 실행, 입점·유통, 성과 리포트</p><div class="pc-note">→ 주간 리포트</div></div>
+      <div class="pc reveal-scale d1"><div class="sn">01</div><h4 data-ko="기획" data-en="Plan">기획</h4><p data-ko="목표 수립, 기업 모집 설계, 프로그램 구조 기획" data-en="Goal setting, company recruitment design, program structure planning">목표 수립, 기업 모집 설계, 프로그램 구조 기획</p><div class="pc-note" data-ko="→ 48시간 내 제안" data-en="→ Proposal within 48h">→ 48시간 내 제안</div></div>
+      <div class="pc reveal-scale d2"><div class="sn">02</div><h4 data-ko="운영" data-en="Operate">운영</h4><p data-ko="컨퍼런스·프로그램 실행, 멘토링, 네트워킹" data-en="Conference &amp; program execution, mentoring, networking">컨퍼런스·프로그램 실행, 멘토링, 네트워킹</p><div class="pc-note" data-ko="→ 전담 PM 배정" data-en="→ Dedicated PM assigned">→ 전담 PM 배정</div></div>
+      <div class="pc reveal-scale d3"><div class="sn">03</div><h4 data-ko="연결" data-en="Connect">연결</h4><p data-ko="바이어·파트너 매칭, IR 기회 제공" data-en="Buyer &amp; partner matching, IR opportunities">바이어·파트너 매칭, IR 기회 제공</p><div class="pc-note" data-ko="→ 글로벌 네트워크" data-en="→ Global network">→ 글로벌 네트워크</div></div>
+      <div class="pc reveal-scale d4"><div class="sn">04</div><h4 data-ko="실행" data-en="Execute">실행</h4><p data-ko="해외 진출 실행, 입점·유통, 성과 리포트" data-en="Market entry execution, onboarding &amp; distribution, performance reports">해외 진출 실행, 입점·유통, 성과 리포트</p><div class="pc-note" data-ko="→ 주간 리포트" data-en="→ Weekly reports">→ 주간 리포트</div></div>
     </div>
   </div>
   <div class="proc-hint reveal">drag to scroll →</div>
@@ -447,10 +454,10 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
 <!-- TESTIMONIALS (asymmetric) -->
 <section class="sec"><div class="si">
   <div class="lb reveal">/Voices</div>
-  <h2 class="st reveal d1">직접 겪은 분들의 말</h2>
+  <h2 class="st reveal d1" data-ko="직접 겪은 분들의 말" data-en="What Our Partners Say">직접 겪은 분들의 말</h2>
   <div class="testi" style="margin-top:40px">
-    <div class="tq reveal-left"><blockquote>QAIPI Demo Day를 함께 기획·운영하면서, 현장 실행력과 글로벌 네트워크 활용 능력에 깊은 인상을 받았습니다. 스타트업과 투자자를 실질적으로 연결하는 역할을 해주었습니다.</blockquote><div class="tq-author"><strong>글로벌 테크 기업</strong> 파트너십 담당</div></div>
-    <div class="tq reveal-right d1"><blockquote>창업지원 프로그램의 설계부터 운영까지 전 과정을 맡겼는데, 참여 기업 만족도가 매우 높았습니다.</blockquote><div class="tq-author"><strong>공공기관</strong> 사업 담당자</div></div>
+    <div class="tq reveal-left"><blockquote data-ko="QAIPI Demo Day를 함께 기획·운영하면서, 현장 실행력과 글로벌 네트워크 활용 능력에 깊은 인상을 받았습니다. 스타트업과 투자자를 실질적으로 연결하는 역할을 해주었습니다." data-en="While co-planning and operating the QAIPI Demo Day, we were deeply impressed by their on-site execution and ability to leverage global networks. They played a key role in practically connecting startups with investors.">QAIPI Demo Day를 함께 기획·운영하면서, 현장 실행력과 글로벌 네트워크 활용 능력에 깊은 인상을 받았습니다. 스타트업과 투자자를 실질적으로 연결하는 역할을 해주었습니다.</blockquote><div class="tq-author" data-ko="<strong>글로벌 테크 기업</strong> 파트너십 담당" data-en="<strong>Global Tech Company</strong> Partnership Manager"><strong>글로벌 테크 기업</strong> 파트너십 담당</div></div>
+    <div class="tq reveal-right d1"><blockquote data-ko="창업지원 프로그램의 설계부터 운영까지 전 과정을 맡겼는데, 참여 기업 만족도가 매우 높았습니다." data-en="We entrusted the entire process from program design to operation, and the satisfaction of participating companies was very high.">창업지원 프로그램의 설계부터 운영까지 전 과정을 맡겼는데, 참여 기업 만족도가 매우 높았습니다.</blockquote><div class="tq-author" data-ko="<strong>공공기관</strong> 사업 담당자" data-en="<strong>Public Institution</strong> Program Manager"><strong>공공기관</strong> 사업 담당자</div></div>
   </div>
 </div></section>
 
@@ -459,7 +466,7 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
 <!-- NEWS -->
 <section class="sec" id="n"><div class="si">
   <div class="lb reveal">/News</div>
-  <h2 class="st reveal d1">최근 소식</h2>
+  <h2 class="st reveal d1" data-ko="최근 소식" data-en="Latest News">최근 소식</h2>
   <div id="news-container" style="margin-top:40px">
     <div class="ni reveal"><div class="nl"><span class="nd">2026.03</span><span class="ns">매일경제</span><span class="nt">3SVS, 월마트 입점 지원 프로그램 공식 런칭</span></div><span class="na">&#8599;</span></div>
     <div class="ni reveal d1"><div class="nl"><span class="nd">2026.02</span><span class="ns">전자신문</span><span class="nt">퀄컴-3SVS, APAC 데모데이 성료</span></div><span class="na">&#8599;</span></div>
@@ -476,16 +483,16 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
     <p class="reveal d1" data-text="cta_desc">사업 문의, 프로그램 참여, 파트너십 제안을 환영합니다.</p>
     <form id="inquiry-form" class="reveal d2" style="max-width:480px;margin:32px auto 0;text-align:left">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
-        <input type="text" id="inq-name" placeholder="이름 *" required style="padding:14px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;font-family:inherit;font-size:15px;outline:none">
-        <input type="email" id="inq-email" placeholder="이메일 *" required style="padding:14px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;font-family:inherit;font-size:15px;outline:none">
+        <input type="text" id="inq-name" placeholder="이름 *" data-ph-ko="이름 *" data-ph-en="Name *" required style="padding:14px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;font-family:inherit;font-size:15px;outline:none">
+        <input type="email" id="inq-email" placeholder="이메일 *" data-ph-ko="이메일 *" data-ph-en="Email *" required style="padding:14px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;font-family:inherit;font-size:15px;outline:none">
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
-        <input type="text" id="inq-company" placeholder="회사명" style="padding:14px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;font-family:inherit;font-size:15px;outline:none">
-        <input type="tel" id="inq-phone" placeholder="연락처" style="padding:14px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;font-family:inherit;font-size:15px;outline:none">
+        <input type="text" id="inq-company" placeholder="회사명" data-ph-ko="회사명" data-ph-en="Company" style="padding:14px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;font-family:inherit;font-size:15px;outline:none">
+        <input type="tel" id="inq-phone" placeholder="연락처" data-ph-ko="연락처" data-ph-en="Phone" style="padding:14px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;font-family:inherit;font-size:15px;outline:none">
       </div>
-      <textarea id="inq-message" placeholder="문의 내용 *" required rows="4" style="width:100%;padding:14px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;font-family:inherit;font-size:15px;outline:none;resize:vertical;margin-bottom:16px"></textarea>
+      <textarea id="inq-message" placeholder="문의 내용 *" data-ph-ko="문의 내용 *" data-ph-en="Your Message *" required rows="4" style="width:100%;padding:14px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;font-family:inherit;font-size:15px;outline:none;resize:vertical;margin-bottom:16px"></textarea>
       <div style="text-align:center">
-        <button type="submit" class="btn-w" id="inquiry-submit" style="display:inline-flex;padding:16px 48px;background:#fff;border:none;border-radius:4px;color:#131313;font-family:inherit;font-size:17px;font-weight:600;cursor:pointer">문의 보내기</button>
+        <button type="submit" class="btn-w" id="inquiry-submit" data-ko="문의 보내기" data-en="Send Inquiry" style="display:inline-flex;padding:16px 48px;background:#fff;border:none;border-radius:4px;color:#131313;font-family:inherit;font-size:17px;font-weight:600;cursor:pointer">문의 보내기</button>
       </div>
       <div id="inquiry-result" style="text-align:center;margin-top:16px;font-size:15px;display:none"></div>
     </form>
@@ -496,11 +503,11 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
 <div class="forum-banner" style="padding-top:48px;padding-bottom:48px;border-top:1px solid var(--border-dark)">
   <a href="https://forum.3svs.com" target="_blank" class="forum-card reveal">
     <div class="forum-text">
-      <h4>다양한 규모의 행사 · 설명회 · 이벤트</h4>
-      <p>세미나, 포럼, 데모데이 등 행사 개최를 도와드립니다</p>
+      <h4 data-ko="다양한 규모의 행사 · 설명회 · 이벤트" data-en="Events · Seminars · Conferences of All Sizes">다양한 규모의 행사 · 설명회 · 이벤트</h4>
+      <p data-ko="세미나, 포럼, 데모데이 등 행사 개최를 도와드립니다" data-en="We help you host seminars, forums, demo days and more">세미나, 포럼, 데모데이 등 행사 개최를 도와드립니다</p>
     </div>
     <div style="display:flex;align-items:center;gap:12px">
-      <span class="forum-url">행사 페이지 바로가기 — forum.3svs.com</span>
+      <span class="forum-url" data-ko="행사 페이지 바로가기 — forum.3svs.com" data-en="Visit Events Page — forum.3svs.com">행사 페이지 바로가기 — forum.3svs.com</span>
       <span class="forum-arrow">&#8599;</span>
     </div>
   </a>
@@ -509,7 +516,7 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
 <!-- FAQ -->
 <section class="sec"><div class="si">
   <div class="lb reveal">/FAQ</div>
-  <h2 class="st reveal d1">자주 묻는 질문</h2>
+  <h2 class="st reveal d1" data-ko="자주 묻는 질문" data-en="FAQ">자주 묻는 질문</h2>
   <div id="faq-container" style="max-width:760px;margin-top:40px">
     <details class="faq-item reveal"><summary data-text="faq1_q">최소 사업 규모는?</summary><p class="faq-a" data-text="faq1_a">소규모 컨설팅부터 수억 원 규모 정부 사업까지 유연하게 대응합니다.</p></details>
     <details class="faq-item reveal"><summary data-text="faq2_q">해외 네트워크 범위는?</summary><p class="faq-a" data-text="faq2_a">북미(실리콘밸리), 동남아(베트남, 싱가포르), 중동(리야드)에 현지 네트워크를 보유하고 있습니다. Qualcomm, Plug and Play, Walmart 등과 직접 협업합니다.</p></details>
@@ -526,16 +533,16 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
 </div>
 <div class="ft">
   <div class="ft-top">
-    <div class="ft-col"><h5>About</h5><p>3STRIPE Venture Studio<br>서울시 영등포구 63로 32<br>(여의도동, 콤비빌딩)</p></div>
+    <div class="ft-col"><h5>About</h5><p data-ko="3STRIPE Venture Studio<br>서울시 영등포구 63로 32<br>(여의도동, 콤비빌딩)" data-en="3STRIPE Venture Studio<br>63-ro 32, Yeongdeungpo-gu<br>Seoul, Korea">3STRIPE Venture Studio<br>서울시 영등포구 63로 32<br>(여의도동, 콤비빌딩)</p></div>
     <div class="ft-col"><h5>Email</h5><a href="mailto:welcome@3svs.com">welcome@3svs.com</a></div>
     <div class="ft-col"><h5>Navigation</h5><a href="#s">Services</a><a href="#t">Track Record</a><a href="#n">News</a><a href="#ct">Contact</a><a href="https://forum.3svs.com" target="_blank">Forum</a></div>
     <div class="ft-col"><h5>Connect</h5><a href="#">LinkedIn</a><a href="#">Instagram</a></div>
-    <div class="ft-col"><h5>Legal</h5><a href="#">이용약관</a><a href="#">개인정보처리방침</a><p style="margin-top:8px;font-size:11px;color:rgba(255,255,255,0.1)">사업자등록번호 703-87-03354</p></div>
+    <div class="ft-col"><h5>Legal</h5><a href="#" data-ko="이용약관" data-en="Terms">이용약관</a><a href="#" data-ko="개인정보처리방침" data-en="Privacy Policy">개인정보처리방침</a><p style="margin-top:8px;font-size:11px;color:rgba(255,255,255,0.1)">사업자등록번호 703-87-03354</p></div>
   </div>
   <div class="ft-bottom"><div class="ft-copy">&copy; 2026 3STRIPE Venture Studio</div><div class="ft-legal"><a href="#">Terms</a><a href="#">Privacy</a></div></div>
 </div>
 
-<div class="sticky-cta"><button class="btn-w" onclick="document.getElementById('ct').scrollIntoView({behavior:'smooth'})">무료 상담 신청</button></div>
+<div class="sticky-cta"><button class="btn-w" data-ko="무료 상담 신청" data-en="Book Consultation" onclick="document.getElementById('ct').scrollIntoView({behavior:'smooth'})">무료 상담 신청</button></div>
 
 <script>
 // Scroll animations (multiple types)
@@ -570,6 +577,113 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
   vids.forEach(function(v){obs.observe(v)});
 })();
 
+// ============ LANGUAGE TOGGLE ============
+var _currentLang = localStorage.getItem('3svs_lang') || 'ko';
+var _textMapKo = {};
+var _textMapEn = {};
+
+function switchLang(lang) {
+  _currentLang = lang;
+  localStorage.setItem('3svs_lang', lang);
+
+  // Update toggle buttons
+  document.querySelectorAll('.lang-btn').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+
+  // Update html lang attribute
+  document.documentElement.lang = lang === 'en' ? 'en' : 'ko';
+
+  // Swap data-text elements (Supabase content)
+  var map = lang === 'en' ? _textMapEn : _textMapKo;
+  var fallback = _textMapKo;
+  document.querySelectorAll('[data-text]').forEach(function(el) {
+    var key = el.getAttribute('data-text');
+    var val = map[key] || fallback[key];
+    if (!val) return;
+    if (el.getAttribute('data-html') === '1') {
+      var parts = val.split(/\\n|\n/);
+      el.innerHTML = parts.map(function(p) { return _accentize(p); }).join('<br>');
+    } else if (val.indexOf('{') !== -1) {
+      el.innerHTML = _accentize(val);
+    } else {
+      el.textContent = val;
+    }
+  });
+
+  // Swap hardcoded elements with data-en
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    if (!el.getAttribute('data-ko')) {
+      el.setAttribute('data-ko', el.innerHTML);
+    }
+    if (lang === 'en') {
+      el.innerHTML = el.getAttribute('data-en');
+    } else {
+      el.innerHTML = el.getAttribute('data-ko');
+    }
+  });
+
+  // Swap placeholders
+  document.querySelectorAll('[data-ph-en]').forEach(function(el) {
+    if (!el.getAttribute('data-ph-ko')) {
+      el.setAttribute('data-ph-ko', el.placeholder);
+    }
+    el.placeholder = lang === 'en' ? el.getAttribute('data-ph-en') : el.getAttribute('data-ph-ko');
+  });
+
+  // Re-render news if loaded
+  if (window._newsData) _renderNews(window._newsData, lang);
+  // Re-render track records if loaded
+  if (window._trData) _renderTrackRecords(window._trData, lang);
+}
+
+function _accentize(str) {
+  var d = document.createElement('div');
+  d.textContent = str || '';
+  var escaped = d.innerHTML;
+  return escaped.replace(/\{([^}]+)\}/g, '<em>$1</em>');
+}
+
+function _renderNews(data, lang) {
+  var c = document.getElementById('news-container');
+  if (!c) return;
+  function esc(s) { var d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+  c.innerHTML = data.map(function(n, i) {
+    var delay = i > 0 ? ' d' + i : '';
+    var url = n.url || '#';
+    var title = (lang === 'en' && n.title_en) ? n.title_en : n.title;
+    return '<a href="' + esc(url) + '" target="_blank" style="text-decoration:none;color:inherit" class="ni reveal' + delay + '"><div class="nl"><span class="nd">' + esc(n.date) + '</span><span class="ns">' + esc(n.source) + '</span><span class="nt">' + esc(title) + '</span></div><span class="na">&#8599;</span></a>';
+  }).join('');
+  c.querySelectorAll('.reveal').forEach(function(el) {
+    if (window._revealObs) window._revealObs.observe(el);
+    el.classList.add('visible');
+  });
+}
+
+function _renderTrackRecords(data, lang) {
+  var c = document.getElementById('tr-container');
+  if (!c) return;
+  function esc(s) { var d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+  var years = {};
+  data.forEach(function(r) {
+    if (!years[r.year]) years[r.year] = [];
+    years[r.year].push(r);
+  });
+  var sortedYears = Object.keys(years).sort();
+  c.innerHTML = sortedYears.map(function(yr, i) {
+    var delay = i > 0 ? ' d' + i : '';
+    var items = years[yr].map(function(r) {
+      var title = (lang === 'en' && r.title_en) ? r.title_en : r.title;
+      return '<div class="ti"><strong>' + _accentize(title) + '</strong>' + (r.tag ? ' <span class="tt">' + esc(r.tag) + '</span>' : '') + '</div>';
+    }).join('');
+    return '<div class="tc reveal' + delay + '"><div class="yr">' + yr + '</div>' + items + '</div>';
+  }).join('');
+  c.querySelectorAll('.reveal').forEach(function(el) {
+    if (window._revealObs) window._revealObs.observe(el);
+    el.classList.add('visible');
+  });
+}
+
 // ============ SUPABASE INTEGRATION ============
 (function(){
   var SB_URL='https://ixvuvaaovcsrcfjmrrnb.supabase.co';
@@ -577,27 +691,27 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
   var sb=supabase.createClient(SB_URL,SB_KEY);
 
   function esc(s){var d=document.createElement('div');d.textContent=s||'';return d.innerHTML}
-  function accentize(str){return esc(str).replace(/\{([^}]+)\}/g,'<em>$1</em>')}
 
   // 1. Load site texts
   sb.from('site_texts').select('*').then(function(res){
     if(res.error||!res.data)return;
-    var map={};
-    res.data.forEach(function(t){map[t.id]=t.content});
+    res.data.forEach(function(t){
+      _textMapKo[t.id]=t.content;
+      _textMapEn[t.id]=t.content_en||t.content;
+    });
+    // Apply current language
+    var map=_currentLang==='en'?_textMapEn:_textMapKo;
     document.querySelectorAll('[data-text]').forEach(function(el){
       var key=el.getAttribute('data-text');
-      if(!map[key])return;
-      var val=map[key];
+      var val=map[key]||_textMapKo[key];
+      if(!val)return;
       if(el.getAttribute('data-html')==='1'){
         var parts=val.split(/\\n|\n/);
-        el.innerHTML=parts.map(function(p){return accentize(p)}).join('<br>');
+        el.innerHTML=parts.map(function(p){return _accentize(p)}).join('<br>');
+      } else if(val.indexOf('{')!==-1){
+        el.innerHTML=_accentize(val);
       } else {
-        // data-html 아닌 요소도 {강조} 지원
-        if(val.indexOf('{')!==-1){
-          el.innerHTML=accentize(val);
-        } else {
-          el.textContent=val;
-        }
+        el.textContent=val;
       }
     });
   });
@@ -605,41 +719,15 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
   // 2. Load news
   sb.from('news').select('*').eq('is_visible',true).order('sort_order',{ascending:true}).then(function(res){
     if(res.error||!res.data||!res.data.length)return;
-    var c=document.getElementById('news-container');
-    if(!c)return;
-    c.innerHTML=res.data.map(function(n,i){
-      var delay=i>0?' d'+i:'';
-      var url=n.url||'#';
-      return '<a href="'+esc(url)+'" target="_blank" style="text-decoration:none;color:inherit" class="ni reveal'+delay+'"><div class="nl"><span class="nd">'+esc(n.date)+'</span><span class="ns">'+esc(n.source)+'</span><span class="nt">'+esc(n.title)+'</span></div><span class="na">&#8599;</span></a>';
-    }).join('');
-    // Re-observe new elements for animation
-    c.querySelectorAll('.reveal').forEach(function(el){
-      if(window._revealObs)window._revealObs.observe(el);
-    });
+    window._newsData=res.data;
+    _renderNews(res.data,_currentLang);
   });
 
   // 3. Load track records
   sb.from('track_records').select('*').eq('is_visible',true).order('sort_order',{ascending:true}).then(function(res){
     if(res.error||!res.data||!res.data.length)return;
-    var c=document.getElementById('tr-container');
-    if(!c)return;
-    // Group by year
-    var years={};
-    res.data.forEach(function(r){
-      if(!years[r.year])years[r.year]=[];
-      years[r.year].push(r);
-    });
-    var sortedYears=Object.keys(years).sort();
-    c.innerHTML=sortedYears.map(function(yr,i){
-      var delay=i>0?' d'+i:'';
-      var items=years[yr].map(function(r){
-        return '<div class="ti"><strong>'+accentize(r.title)+'</strong>'+(r.tag?' <span class="tt">'+esc(r.tag)+'</span>':'')+'</div>';
-      }).join('');
-      return '<div class="tc reveal'+delay+'"><div class="yr">'+yr+'</div>'+items+'</div>';
-    }).join('');
-    c.querySelectorAll('.reveal').forEach(function(el){
-      if(window._revealObs)window._revealObs.observe(el);
-    });
+    window._trData=res.data;
+    _renderTrackRecords(res.data,_currentLang);
   });
 
   // 4. Load partner logos (2-tier)
@@ -691,7 +779,7 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
       var btn=document.getElementById('inquiry-submit');
       var result=document.getElementById('inquiry-result');
       btn.disabled=true;
-      btn.textContent='보내는 중...';
+      btn.textContent=_currentLang==='en'?'Sending...':'보내는 중...';
       var payload={
         name:document.getElementById('inq-name').value,
         email:document.getElementById('inq-email').value,
@@ -703,21 +791,26 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
         if(res.error){
           result.style.display='block';
           result.style.color='#ff4d4d';
-          result.textContent='전송 실패: '+res.error.message;
+          result.textContent=(_currentLang==='en'?'Failed to send: ':'전송 실패: ')+res.error.message;
           btn.disabled=false;
-          btn.textContent='문의 보내기';
+          btn.textContent=_currentLang==='en'?'Send Inquiry':'문의 보내기';
         } else {
           result.style.display='block';
           result.style.color='var(--lime)';
-          result.textContent='문의가 접수되었습니다. 24시간 내에 연락드리겠습니다.';
+          result.textContent=_currentLang==='en'?'Your inquiry has been received. We will contact you within 24 hours.':'문의가 접수되었습니다. 24시간 내에 연락드리겠습니다.';
           form.reset();
           btn.disabled=false;
-          btn.textContent='문의 보내기';
+          btn.textContent=_currentLang==='en'?'Send Inquiry':'문의 보내기';
         }
       });
     });
   }
 })();
+
+// Initialize language
+if (_currentLang === 'en') {
+  switchLang('en');
+}
 </script>
 </body>
 </html>
