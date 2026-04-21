@@ -709,7 +709,8 @@ a:hover { text-decoration: underline; }
           <div class="form-group"><label>날짜</label><input id="news-date" placeholder="2026.03"></div>
           <div class="form-group"><label>출처</label><input id="news-source" placeholder="매일경제"></div>
         </div>
-        <div class="form-group"><label>제목</label><input id="news-title" placeholder="기사 제목"></div>
+        <div class="form-group"><label>제목 (KO)</label><input id="news-title" placeholder="기사 제목"></div>
+        <div class="form-group"><label>제목 (EN)</label><input id="news-title-en" placeholder="Article title in English" style="border-color:#1a365d"></div>
         <div class="form-group"><label>URL</label><input id="news-url" placeholder="https://..."></div>
         <input type="hidden" id="news-edit-id">
         <div class="form-actions">
@@ -737,7 +738,8 @@ a:hover { text-decoration: underline; }
           <div class="form-group"><label>연도</label><input type="number" id="tr-year" placeholder="2026"></div>
           <div class="form-group"><label>태그</label><input id="tr-tag" placeholder="투자, M&A 등"></div>
         </div>
-        <div class="form-group"><label>제목</label><input id="tr-title" placeholder="제목 입력"></div>
+        <div class="form-group"><label>제목 (KO)</label><input id="tr-title" placeholder="제목 입력"></div>
+        <div class="form-group"><label>제목 (EN)</label><input id="tr-title-en" placeholder="Title in English" style="border-color:#1a365d"></div>
         <input type="hidden" id="tr-edit-id">
         <div class="form-actions">
           <button class="btn btn-secondary btn-sm" onclick="closeTrForm()">취소</button>
@@ -974,7 +976,10 @@ async function loadTexts() {
             <span class="text-item-label">${esc(item.label || '')}</span>
             <span class="text-item-key">${esc(item.id || '')}</span>
           </div>
+          <div style="display:flex;gap:4px;align-items:center;margin-bottom:4px"><span style="font-size:11px;padding:2px 8px;background:#333;border-radius:3px;color:#aaa">KO</span></div>
           <textarea id="text-${item.id}" rows="3">${esc(item.content || '')}</textarea>
+          <div style="display:flex;gap:4px;align-items:center;margin:8px 0 4px"><span style="font-size:11px;padding:2px 8px;background:#1a365d;border-radius:3px;color:#63b3ed">EN</span></div>
+          <textarea id="text-en-${item.id}" rows="3" style="border-color:#1a365d" placeholder="English version">${esc(item.content_en || '')}</textarea>
           <button class="btn btn-primary btn-sm" onclick="saveText('${item.id}')">저장</button>
         </div>
       `).join('')}
@@ -983,11 +988,11 @@ async function loadTexts() {
 }
 
 async function saveText(id) {
-  const textarea = document.getElementById(`text-${id}`);
-  const content = textarea.value;
-  const { error } = await sb.from('site_texts').update({ content }).eq('id', id);
+  const content = document.getElementById(`text-${id}`).value;
+  const contentEn = document.getElementById(`text-en-${id}`).value;
+  const { error } = await sb.from('site_texts').update({ content, content_en: contentEn }).eq('id', id);
   if (error) toast('저장 실패: ' + error.message, 'error');
-  else toast('텍스트가 저장되었습니다');
+  else toast('텍스트가 저장되었습니다 (KO + EN)');
 }
 
 // ============ NEWS ============
@@ -1017,6 +1022,7 @@ document.getElementById('news-add-btn').addEventListener('click', () => {
   document.getElementById('news-date').value = '';
   document.getElementById('news-source').value = '';
   document.getElementById('news-title').value = '';
+  document.getElementById('news-title-en').value = '';
   document.getElementById('news-url').value = '';
   document.getElementById('news-edit-id').value = '';
   document.getElementById('news-form').classList.add('show');
@@ -1031,6 +1037,7 @@ async function editNews(id) {
   document.getElementById('news-date').value = data.date || '';
   document.getElementById('news-source').value = data.source || '';
   document.getElementById('news-title').value = data.title || '';
+  document.getElementById('news-title-en').value = data.title_en || '';
   document.getElementById('news-url').value = data.url || '';
   document.getElementById('news-edit-id').value = id;
   document.getElementById('news-form').classList.add('show');
@@ -1042,6 +1049,7 @@ async function saveNews() {
     date: document.getElementById('news-date').value,
     source: document.getElementById('news-source').value,
     title: document.getElementById('news-title').value,
+    title_en: document.getElementById('news-title-en').value,
     url: document.getElementById('news-url').value
   };
   let error;
@@ -1100,6 +1108,7 @@ document.getElementById('tr-add-btn').addEventListener('click', () => {
   document.getElementById('tr-year').value = '';
   document.getElementById('tr-tag').value = '';
   document.getElementById('tr-title').value = '';
+  document.getElementById('tr-title-en').value = '';
   document.getElementById('tr-edit-id').value = '';
   document.getElementById('tr-form').classList.add('show');
 });
@@ -1161,6 +1170,7 @@ async function editTr(id) {
   document.getElementById('tr-year').value = data.year || '';
   document.getElementById('tr-tag').value = data.tag || '';
   document.getElementById('tr-title').value = data.title || '';
+  document.getElementById('tr-title-en').value = data.title_en || '';
   document.getElementById('tr-edit-id').value = id;
   document.getElementById('tr-form').classList.add('show');
 }
@@ -1170,6 +1180,7 @@ async function saveTr() {
   const payload = {
     year: parseInt(document.getElementById('tr-year').value) || null,
     title: document.getElementById('tr-title').value,
+    title_en: document.getElementById('tr-title-en').value,
     tag: document.getElementById('tr-tag').value
   };
   let error;
