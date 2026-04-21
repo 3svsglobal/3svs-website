@@ -467,11 +467,7 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
 <section class="sec" id="n"><div class="si">
   <div class="lb reveal">/News</div>
   <h2 class="st reveal d1" data-ko="최근 소식" data-en="Latest News">최근 소식</h2>
-  <div id="news-container" style="margin-top:40px">
-    <div class="ni reveal"><div class="nl"><span class="nd">2026.03</span><span class="ns">매일경제</span><span class="nt">3SVS, 월마트 입점 지원 프로그램 공식 런칭</span></div><span class="na">&#8599;</span></div>
-    <div class="ni reveal d1"><div class="nl"><span class="nd">2026.02</span><span class="ns">전자신문</span><span class="nt">퀄컴-3SVS, APAC 데모데이 성료</span></div><span class="na">&#8599;</span></div>
-    <div class="ni reveal d2"><div class="nl"><span class="nd">2025.11</span><span class="ns">한경</span><span class="nt">3SVS, 동남아 유통 채널 구축 본격화</span></div><span class="na">&#8599;</span></div>
-  </div>
+  <div id="news-container" style="margin-top:40px"></div>
 </div></section>
 
 <!-- CTA + CONTACT FORM -->
@@ -718,7 +714,9 @@ function _renderTrackRecords(data, lang) {
 
   // 2. Load news
   sb.from('news').select('*').eq('is_visible',true).order('sort_order',{ascending:true}).then(function(res){
-    if(res.error||!res.data||!res.data.length)return;
+    var sec=document.getElementById('n');
+    if(res.error||!res.data||!res.data.length){if(sec)sec.style.display='none';return;}
+    if(sec)sec.style.display='';
     window._newsData=res.data;
     _renderNews(res.data,_currentLang);
   });
