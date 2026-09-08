@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>3Stripe Venture Studio</title>
+<link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
@@ -55,7 +56,8 @@ a{color:inherit;text-decoration:none}
 /* ===================== NAV ===================== */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 var(--sec-px);background:transparent;border-bottom:1px solid transparent;transition:background .4s,border-color .4s,backdrop-filter .4s}
 nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border-dark)}
-.n-logo{font-family:var(--font);font-size:18px;font-weight:700;color:#fff}
+.n-logo{display:flex;align-items:center;gap:10px;font-family:var(--font);font-size:18px;font-weight:700;color:#fff}
+.n-logo svg{width:22px;height:22px;flex-shrink:0}
 .n-logo span{font-weight:400;opacity:.4}
 .n-menu{display:flex;gap:36px}
 .n-menu a{font-family:var(--mono);font-size:12px;font-weight:400;text-transform:uppercase;color:rgba(255,255,255,0.4);padding:8px 0;transition:color .2s}
@@ -321,7 +323,10 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
 
 <!-- NAV -->
 <nav id="mainNav">
-  <div class="n-logo">3SVS <span>Venture Studio</span></div>
+  <div class="n-logo">
+    <svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><g><rect x="56" y="8" width="13" height="56"/><rect x="56" y="8" width="13" height="56" transform="rotate(120 50 50)"/><rect x="56" y="8" width="13" height="56" transform="rotate(240 50 50)"/></g></svg>
+    3SVS <span>Venture Studio</span>
+  </div>
   <div class="n-menu"><a href="#s">Services</a><a href="#t">Track Record</a><a href="#n">News</a><a href="#ct">Contact</a></div>
   <a class="n-cta" href="#ct">Get in Touch</a>
   <div class="lang-toggle"><span class="lang-btn active" data-lang="ko" onclick="switchLang('ko')">KO</span><span class="lang-sep">|</span><span class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</span></div>
