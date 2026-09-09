@@ -59,7 +59,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border-dark)}
 .n-logo{display:flex;align-items:flex-end;gap:7px;font-family:'Archivo Narrow',var(--font);font-size:19px;font-weight:700;letter-spacing:-0.01em;line-height:.85;color:#fff}
 .n-logo svg{height:34px;width:auto;flex-shrink:0}
-.n-logo span{font-weight:500;opacity:.45}
+.n-logo-tx{display:inline-block;text-align:left}
+.n-logo-tx em{font-style:normal;display:block;font-size:17px;font-weight:700;line-height:.85}
+.n-logo-sub{display:flex;justify-content:space-between;width:100%;font-family:var(--mono);font-size:6.3px;font-weight:400;letter-spacing:0;color:rgba(255,255,255,.5);margin-top:1.5px}
+.n-logo-sub b{font-weight:400}
 .n-menu{display:flex;gap:36px}
 .n-menu a{font-family:var(--mono);font-size:12px;font-weight:400;text-transform:uppercase;color:rgba(255,255,255,0.4);padding:8px 0;transition:color .2s}
 .n-menu a:hover{color:#fff}
@@ -330,7 +333,7 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
       <polygon points="40,46 72,30 72,50 40,66"/>
       <polygon points="34,73 66,57 66,77 34,93"/>
     </svg>
-    3Stripe <span>Venture Studio</span>
+    <span class="n-logo-tx"><em>3Stripe</em><span class="n-logo-sub"><b>V</b><b>E</b><b>N</b><b>T</b><b>U</b><b>R</b><b>E</b><b>&nbsp;</b><b>S</b><b>T</b><b>U</b><b>D</b><b>I</b><b>O</b></span></span>
   </div>
   <div class="n-menu"><a href="#s">Services</a><a href="#t">Track Record</a><a href="#n">News</a><a href="#ct">Contact</a></div>
   <a class="n-cta" href="#ct">Get in Touch</a>
