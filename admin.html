@@ -53,6 +53,9 @@ body {
   max-width: 400px;
 }
 
+.login-box h1 img, .sidebar-header h2 img { display: block; height: auto; }
+.sidebar-header h2 { margin-bottom: 6px; }
+
 .login-box h1 {
   font-size: 24px;
   font-weight: 700;
@@ -573,13 +576,16 @@ a:hover { text-decoration: underline; }
 .mb-16 { margin-bottom: 16px; }
 .flex-between { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
 </head>
 <body>
 
 <!-- Login Screen -->
 <div id="login-screen">
   <div class="login-box">
-    <h1>3SVS</h1>
+    <h1><img src="/brand/3stripe-logo-h-white.svg" alt="3STRIPE Venture Studio" width="200" height="40"></h1>
     <p>관리자 대시보드에 로그인하세요</p>
     <div id="login-error" class="error-msg"></div>
     <form id="login-form">
@@ -601,7 +607,7 @@ a:hover { text-decoration: underline; }
   <div class="sidebar-overlay" id="sidebar-overlay"></div>
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <h2>3SVS</h2>
+      <h2><img src="/brand/3stripe-logo-h-white.svg" alt="3STRIPE Venture Studio" width="150" height="30"></h2>
       <span>관리자 대시보드</span>
     </div>
     <nav class="sidebar-nav">

@@ -44,8 +44,9 @@ a{color:inherit;text-decoration:none}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 var(--sec-px);background:transparent;border-bottom:1px solid transparent;transition:background .4s,border-color .4s,backdrop-filter .4s}
 nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border-dark)}
-.n-logo{font-family:var(--font);font-size:18px;font-weight:700;color:#fff}
-.n-logo span{font-weight:400;opacity:.4}
+.n-logo{display:flex;align-items:center;line-height:0}
+.n-logo img{display:block;height:38px;width:auto}
+@media(max-width:768px){.n-logo img{height:30px}}
 .n-menu{display:flex;gap:36px}
 .n-menu a{font-size:13px;color:var(--text-muted);font-weight:500;transition:color .2s;letter-spacing:0}
 .n-menu a:hover{color:#fff}
@@ -124,12 +125,15 @@ ul.rl li b{font-weight:600}
 .ft-legal a:hover{color:#fff}
 .biznum{margin-top:8px;font-size:11px;color:rgba(255,255,255,0.14)}
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a class="n-logo" href="/">3SVS <span>Venture Studio</span></a>
+  <a class="n-logo" href="/" aria-label="3STRIPE Venture Studio"><img src="/brand/3stripe-logo-h-white.svg" alt="3STRIPE Venture Studio" width="190" height="38"></a>
   <div class="n-menu">
     <a href="/#s">Services</a>
     <a href="/#t">Track Record</a>
