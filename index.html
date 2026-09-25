@@ -57,7 +57,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border-dark)}
 .n-logo{display:flex;align-items:center;line-height:0}
 .n-logo img{display:block;height:38px;width:auto}
-@media(max-width:768px){.n-logo img{height:30px}}
+
 .n-menu{display:flex;gap:36px}
 .n-menu a{font-family:var(--mono);font-size:12px;font-weight:400;text-transform:uppercase;color:rgba(255,255,255,0.4);padding:8px 0;transition:color .2s}
 .n-menu a:hover{color:#fff}
@@ -316,6 +316,7 @@ nav.scrolled{background:rgba(19,19,19,0.88);backdrop-filter:blur(24px);-webkit-b
 .lang-btn{padding:6px 10px;cursor:pointer;color:rgba(255,255,255,0.35);transition:color 0.3s}
 .lang-btn.active{color:#fff}
 .lang-sep{color:rgba(255,255,255,0.15);font-weight:400}
+@media(max-width:768px){nav{gap:8px}nav .n-logo{flex-shrink:0}nav .n-logo img{height:24px}nav .n-cta{margin-left:auto;padding:7px 12px;font-size:12px;white-space:nowrap}nav .lang-toggle{margin-left:0}nav .lang-btn{padding:6px 6px}}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml">
